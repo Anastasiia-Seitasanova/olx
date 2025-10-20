@@ -1,7 +1,7 @@
 import { test, expect, Locator, Page } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { FilterPage } from '../pages/FilterPage'
-import { AssertionsPage } from '../assertions/OlxAssertions.spec'
+import { AssertionsPage } from '../assertions/OlxAssertions'
 
 let homePage: HomePage;
 let filterPage: FilterPage;

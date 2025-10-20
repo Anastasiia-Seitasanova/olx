@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
-import { AssertionsPage } from '../assertions/OlxAssertions.spec'
+import { OlxAssertionsPage } from '../assertions/OlxAssertions'
 import { PhonePage } from '../pages/PhonePage'
 
 let homePage: HomePage
-let assertionsPage: AssertionsPage
+let assertionsPage: OlxAssertionsPage
 let phonePage: PhonePage
 
 test('Searching of an iPhone in Poltava', async ({ page }) => {
       homePage = new HomePage(page)
-      assertionsPage = new AssertionsPage(page)
+      assertionsPage = new OlxAssertionsPage(page)
       phonePage = new PhonePage(page)
       
       await homePage.navigate()

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
-import { AssertionsPage } from '../assertions/OlxAssertions.spec'
+import { AssertionsPage } from '../assertions/OlxAssertions'
 
 let homePage: HomePage
 let assertionsPage: AssertionsPage

@@ -35,7 +35,7 @@ async selectFilters(category: string) {
     await this.categoryInput.click({ timeout: 5000 })
     await this.categoryes_suggestion.click()
     await this.conditionInput.click({ timeout: 5000 })
-    await this.newCondition.nth(3)
+    await this.newCondition.nth(3)//.check
 }
 
 async selectOnePhone() {

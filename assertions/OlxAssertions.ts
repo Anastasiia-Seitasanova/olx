@@ -1,6 +1,6 @@
 import { expect, Page, Locator } from '@playwright/test'
 
-export class AssertionsPage {
+export class OlxAssertionsPage {
     readonly result: Locator
     readonly filtersResult: Locator
     readonly priceContainer: Locator
