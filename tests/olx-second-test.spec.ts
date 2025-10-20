@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
+import { AssertionsPage } from '../assertions/OlxAssertions.spec'
 
 let homePage: HomePage
+let assertionsPage: AssertionsPage
 
 const sectionList = [
 'Допомога', 
@@ -27,12 +29,13 @@ const sectionList = [
   for (const section of sectionList) {
 test(`Go through section ${section} `, async ({ page }) => {
   homePage = new HomePage(page)
+  assertionsPage = new AssertionsPage(page)
   await homePage.navigate()
 
     await homePage.clickCategoryButton(section);
     await homePage.clickViewAll();
 
     const categoryText = await homePage.getCategoryText()
-    expect(categoryText.trim()).toBe(section);
+    await assertionsPage.getAndAssertCategoryText();
 })
 }
