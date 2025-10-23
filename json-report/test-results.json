@@ -1,0 +1,160 @@
+{
+  "config": {
+    "configFile": "/Users/anastasiia/js-education/olx/playwright.config.ts",
+    "rootDir": "/Users/anastasiia/js-education/olx/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 20000000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "on-failure",
+          "outputFolder": "html-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "json-report/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "junit-report/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/anastasiia/js-education/olx/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/anastasiia/js-education/olx/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 1600000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "3way",
+    "version": "1.56.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "olx-fourth-test.spec.ts",
+      "file": "olx-fourth-test.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Searching of an iPhone in Poltava",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 1600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 37344,
+                  "error": {
+                    "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//div[@data-testid=\"multi-select-filter\"]').getByText('Стан').getByRole('button')\u001b[22m\n",
+                    "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//div[@data-testid=\"multi-select-filter\"]').getByText('Стан').getByRole('button')\u001b[22m\n\n    at PhonePage.chooseListBox (/Users/anastasiia/js-education/olx/pages/PhonePage.ts:52:69)\n    at /Users/anastasiia/js-education/olx/tests/olx-fourth-test.spec.ts:22:23",
+                    "location": {
+                      "file": "/Users/anastasiia/js-education/olx/pages/PhonePage.ts",
+                      "column": 69,
+                      "line": 52
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m../pages/PhonePage.ts:52\n\n\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m \u001b[36masync\u001b[39m chooseListBox()  {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mconditionInput\u001b[33m.\u001b[39mgetByText(\u001b[32m'Стан'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m)\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mnewCondition\u001b[33m.\u001b[39mnth(\u001b[35m3\u001b[39m)\u001b[33m.\u001b[39mclick()\n \u001b[90m 54 |\u001b[39m }\n \u001b[90m 55 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/anastasiia/js-education/olx/pages/PhonePage.ts",
+                        "column": 69,
+                        "line": 52
+                      },
+                      "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//div[@data-testid=\"multi-select-filter\"]').getByText('Стан').getByRole('button')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/PhonePage.ts:52\n\n\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m \u001b[36masync\u001b[39m chooseListBox()  {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mconditionInput\u001b[33m.\u001b[39mgetByText(\u001b[32m'Стан'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m)\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mnewCondition\u001b[33m.\u001b[39mnth(\u001b[35m3\u001b[39m)\u001b[33m.\u001b[39mclick()\n \u001b[90m 54 |\u001b[39m }\n \u001b[90m 55 |\u001b[39m\u001b[0m\n\u001b[2m    at PhonePage.chooseListBox (/Users/anastasiia/js-education/olx/pages/PhonePage.ts:52:69)\u001b[22m\n\u001b[2m    at /Users/anastasiia/js-education/olx/tests/olx-fourth-test.spec.ts:22:23\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-10-23T13:05:32.986Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/anastasiia/js-education/olx/test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/anastasiia/js-education/olx/test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/anastasiia/js-education/olx/pages/PhonePage.ts",
+                    "column": 69,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "29bc80ba8679047711a4-ec0c6c0b995d8c3abfda",
+          "file": "olx-fourth-test.spec.ts",
+          "line": 11,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-23T13:05:32.228Z",
+    "duration": 38192.863,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

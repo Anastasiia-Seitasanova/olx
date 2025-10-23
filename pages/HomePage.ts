@@ -5,7 +5,6 @@ export class HomePage {
   readonly viewAllButton: Locator
   readonly electronicsSection: Locator
   readonly phonesSubsection: Locator
-
   readonly categoryButton: (sectionName: string) => Locator
   readonly categoryFilter: Locator
   readonly searchInput: Locator 
@@ -22,7 +21,6 @@ export class HomePage {
     this.page.locator(`//p[text()="${sectionName}"]/ancestor::a`)
     this.electronicsSection = page.locator(`.css-yrygxu >> text=Електроніка`)
     this.phonesSubsection = page.getByTestId('sub-cat-37-child-link').getByText("Телефони та аксесуари")
-
     this.searchInput = page.getByTestId('search-input');
     this.locationInput = page.getByTestId('location-search-input');
     this.suggestionList = page.locator('.css-yz55v6');
@@ -59,6 +57,11 @@ async chosePhonesSubsection() {
   async getCategoryText(): Promise<string> {
     await this.page.waitForTimeout(2000);
     return (await this.categoryFilter.textContent()) || '';
+  }
+
+  async searchOfABicycle(query: string) {
+    await this.searchInput.fill(query);
+    await this.searchButton.click({ timeout: 5000 });
   }
 
   async search(query: string, location: string) {

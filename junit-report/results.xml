@@ -1,0 +1,40 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="38.192862999999996">
+<testsuite name="olx-fourth-test.spec.ts" timestamp="2025-10-23T13:05:32.666Z" hostname="chromium" tests="1" failures="1" skipped="0" time="37.344" errors="0">
+<testcase name="Searching of an iPhone in Poltava" classname="olx-fourth-test.spec.ts" time="37.344">
+<failure message="olx-fourth-test.spec.ts:11:5 Searching of an iPhone in Poltava" type="FAILURE">
+<![CDATA[  [chromium] › olx-fourth-test.spec.ts:11:5 › Searching of an iPhone in Poltava ────────────────────
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('//div[@data-testid="multi-select-filter"]').getByText('Стан').getByRole('button')
+
+
+       at ../pages/PhonePage.ts:52
+
+      50 |
+      51 | async chooseListBox()  {
+    > 52 |     await this.conditionInput.getByText('Стан').getByRole('button').click()
+         |                                                                     ^
+      53 |     await this.newCondition.nth(3).click()
+      54 | }
+      55 |
+        at PhonePage.chooseListBox (/Users/anastasiia/js-education/olx/pages/PhonePage.ts:52:69)
+        at /Users/anastasiia/js-education/olx/tests/olx-fourth-test.spec.ts:22:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/olx-fourth-test-Searching-of-an-iPhone-in-Poltava-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

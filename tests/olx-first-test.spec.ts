@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
-import { AssertionsPage } from '../assertions/OlxAssertions'
+import { OlxAssertionsPage } from '../assertions/OlxAssertions'
 
 let homePage: HomePage
-let assertionsPage: AssertionsPage
+let assertionsPage: OlxAssertionsPage
 
 test('To find a book in Kyiv', async ({page}) => {
     homePage = new HomePage(page)
-    assertionsPage = new AssertionsPage(page)
+    assertionsPage = new OlxAssertionsPage(page)
     
     await homePage.navigate()
     await homePage.search('книга', 'Київ')
@@ -15,6 +15,5 @@ test('To find a book in Kyiv', async ({page}) => {
     await assertionsPage.expectResultsCount("Ми знайшли понад 1 000 оголошень")
     const count = await homePage.countResultsInCity('Київ')
 
-    console.log("Кількість книг у Києві: " + count)
     assertionsPage.expectCountOfBooks(count)
   })

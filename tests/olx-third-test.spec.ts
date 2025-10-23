@@ -1,16 +1,16 @@
 import { test, expect, Locator, Page } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { FilterPage } from '../pages/FilterPage'
-import { AssertionsPage } from '../assertions/OlxAssertions'
+import { OlxAssertionsPage } from '../assertions/OlxAssertions'
 
 let homePage: HomePage;
 let filterPage: FilterPage;
-let assertionsPage: AssertionsPage;
+let assertionsPage: OlxAssertionsPage;
 
 test('To find a car', async ({ page }) => {
   homePage = new HomePage(page)
   filterPage = new FilterPage(page)
-  assertionsPage = new AssertionsPage(page)
+  assertionsPage = new OlxAssertionsPage(page)
 
   await homePage.navigate()
   await filterPage.openCarsCategory()
