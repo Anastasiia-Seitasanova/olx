@@ -1,17 +1,12 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
 import { OlxAssertionsPage } from '../assertions/OlxAssertions'
 import { PhonePage } from '../pages/PhonePage'
-import { time } from 'console'
-
-let homePage: HomePage
-let assertionsPage: OlxAssertionsPage
-let phonePage: PhonePage
 
 test('Searching of an iPhone in Poltava', async ({ page }) => {
-      homePage = new HomePage(page)
-      assertionsPage = new OlxAssertionsPage(page)
-      phonePage = new PhonePage(page)
+      const homePage = new HomePage(page)
+      const assertionsPage = new OlxAssertionsPage(page)
+      const phonePage = new PhonePage(page)
 
       await homePage.navigate()
       await homePage.choseElectronicsSection()

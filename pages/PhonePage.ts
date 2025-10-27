@@ -1,5 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test'
-import { time } from 'console'
+import { Page, Locator } from '@playwright/test'
 
 export class PhonePage {
     readonly page: Page
@@ -40,7 +39,7 @@ async fillSearchParameters(phoneName: string, cityName: string) {
     await this.searchButton.click()
 }
 
-async selectFilters(category: string) {
+async selectFilters(categoryName: string) {
     await this.categoryInput.click({ timeout: 5000 })
     await this.categoryes_suggestion.click()
 }

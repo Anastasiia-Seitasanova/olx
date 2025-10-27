@@ -1,9 +1,6 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 import { HomePage } from '../pages/HomePage'
-import { AssertionsPage } from '../assertions/OlxAssertions'
-
-let homePage: HomePage
-let assertionsPage: AssertionsPage
+import { OlxAssertionsPage } from '../assertions/OlxAssertions'
 
 const sectionList = [
 'Допомога', 
@@ -28,14 +25,15 @@ const sectionList = [
 
   for (const section of sectionList) {
 test(`Go through section ${section} `, async ({ page }) => {
-  homePage = new HomePage(page)
-  assertionsPage = new AssertionsPage(page)
+  const homePage = new HomePage(page)
+  const assertionsPage = new OlxAssertionsPage(page)
+
   await homePage.navigate()
 
     await homePage.clickCategoryButton(section);
     await homePage.clickViewAll();
 
-    const categoryText = await homePage.getCategoryText()
-    await assertionsPage.getAndAssertCategoryText();
+    await homePage.getCategoryText()
+    await assertionsPage.getAndAssertCategoryText()
 })
 }

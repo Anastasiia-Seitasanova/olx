@@ -49,6 +49,10 @@ export default defineConfig({
             name: 'chromium',
             use: {
                 ...devices['Desktop Chromium'],
+                   trace: {
+            mode: 'retain-on-failure',
+            screenshots: true,
+        },
             },
         },
         /* {
